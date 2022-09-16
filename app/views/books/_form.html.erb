@@ -11,9 +11,43 @@
     </div>
   <% end %>
 
+  <!-- <% 
+
+  date_vars = (@book[:published_date].to_s).split('-')
+
+  day_op = [] 
+  month_op = []
+  year_op = [] 
+  
+  for i in 0..2022 do
+    year_op.append(i)
+  end
+  year_op = year_op.reverse()
+
+  for i in 1..12 do
+    month_op.append(i)
+  end
+
+  for i in 1..31 do
+    day_op.append(i)
+  end
+  %>
+  -->
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+    <%= form.label :price %>
+    <%= form.number_field :price, step: 'any' %>
+    <%= form.label :published_date %>
+    <%= form.date_field :published_date %>
+    <!-- <%= form.label :year %>
+    <%= form.select :year, year_op, selected: date_vars[0] ? (date_vars[0].to_i).to_s : "2022"%>
+    <%= form.label :month %>
+    <%= form.select :month, month_op, selected: date_vars[1] ? (date_vars[1].to_i).to_s : "1"%>
+    <%= form.label :day %>
+    <%= form.select :day, day_op, selected: date_vars[2] ? (date_vars[2].to_i).to_s : "1"%> -->
   </div>
 
   <div class="actions">
